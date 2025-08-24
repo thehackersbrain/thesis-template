@@ -100,6 +100,7 @@
 \RequirePackage{enumitem} % Customisation of lists.
 \RequirePackage{amsmath} % Advanced mathematical expressions.
 \RequirePackage{amssymb} % Extended mathematical symbols.
+\RequirePackage{amsthm} % Support for theorems.
 \RequirePackage[dvipsnames]{xcolor} % Extended color support.
 \RequirePackage{tcolorbox} % Creating colored and highlighted boxes.
 \RequirePackage{varwidth} % Allows variable-width boxes.
@@ -122,9 +123,14 @@
 \RequirePackage{tikz} % Create high-quality graphics programmatically.
 \RequirePackage{psvectorian} % To include in-text ornamatentions. 
 \RequirePackage{blindtext} % Generate placeholder text.
+\RequirePackage{pgfplots} % for generating graphs and plots.
+\usepackage{siunitx} % Better SI unit mapping in graphs/formulas.
 
 \tcbuselibrary{most} % Load most libraries from the tcolorbox package.
 \WarningsOff[blindtext] % Suppress warnings from the blindtext package.
+\usetikzlibrary{quotes,angles}
+\pgfplotsset{compat=1.8}
+\newtheorem{theorem}{Theorem}
 
 %%% Import Configurations - Maintain the Specified Order! %%%
 \usepackage{Configurations/00-Fonts}
