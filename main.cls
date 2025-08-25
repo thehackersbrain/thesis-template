@@ -17,15 +17,7 @@
 }
 
 \keys_define:nn { main } {
-    coverstyle .choices:nn =
-        { classic, bw }
-        { \tl_gset:Nn \g_main_mycover_tl { #1 } },
-    coverstyle / unknown .code:n = 
-        { \ClassWarningNoLine{main}{Specified~'coverstyle'~not~available.~Defaulting~to~'classic'} },
-    coverstyle .default:n = { classic },
-    coverstyle .initial:n = { classic },
-
-    docstage .choices:nn = 
+    docstage .choices:nn =
         { working, final } 
         { \tl_gset:Nn \g_main_docstage_tl { #1 } },
     docstage / unknown .code:n = 
@@ -60,30 +52,20 @@
     doctype .default:n = { thesis },
     doctype .initial:n = { thesis },
 
-    bookprint .choices:nn = 
-        { true, false } 
-        { \tl_gset:Nn \g_main_bookprint_tl { #1 } },
-    bookprint / unknown .code:n = 
-        { \ClassWarningNoLine{main}{Specified~'bookprint'~not~available.~Defaulting~to~'false'} },
-    bookprint .default:n = { false },
-    bookprint .initial:n = { false },
-    
-    unknown .code:n = 
+    unknown .code:n =
         { \ClassWarningNoLine{main}{An~unknown~option~was~ignored.~Please~check~the~documentation~to~see~the~available~options} }
 }
 
-\newcommand{\CoverOption}{\g_main_mycover_tl}
 \newcommand{\DocStageOption}{\g_main_docstage_tl}
 \newcommand{\MediaOption}{\g_main_media_tl}
 \newcommand{\ColorOption}{\g_main_linkcolor_tl}
 \newcommand{\DocTypeOption}{\g_main_doctype_tl}
-\newcommand{\BookPrintOption}{\g_main_bookprint_tl}
 
 \ProcessKeyOptions[main]
 \ExplSyntaxOff
 
 %%% Load Master Class %%%
-\LoadClass[a4paper,11pt,twoside]{report}
+\LoadClass[a4paper,12pt,twoside]{report}
 
 %%% Required Packages %%%
 \RequirePackage[english]{babel}
@@ -125,6 +107,7 @@
 \RequirePackage{blindtext} % Generate placeholder text.
 \RequirePackage{pgfplots} % for generating graphs and plots.
 \usepackage{siunitx} % Better SI unit mapping in graphs/formulas.
+\usepackage[version=4]{mhchem}
 
 \tcbuselibrary{most} % Load most libraries from the tcolorbox package.
 \WarningsOff[blindtext] % Suppress warnings from the blindtext package.
